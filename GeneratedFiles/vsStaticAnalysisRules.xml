@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rules>
+  <rule key="Dispose methods should call base class dispose">
+    <name>Dispose methods should call base class dispose</name>
+    <configKey><![CDATA[Dispose methods should call base class dispose@$(FxCopDir)\Rules\Microsoft.dll]]></configKey>
+    <category name="Microsoft.Usage" />
+    <description><![CDATA[If a type inherits from a disposable type, it must call the Dispose method of the base type from within its own Dispose method.<br/>
+<a href="@ms182330(VS.100).aspx">MSDN help page of rule CA2215</a>
+]]></description>
+  </rule>
+  <rule key="Dispose objects before losing scope">
+    <name>Dispose objects before losing scope</name>
+    <configKey><![CDATA[Dispose objects before losing scope@$(FxCopDir)\Rules\Microsoft.dll]]></configKey>
+    <category name="Microsoft.Reliability" />
+    <description><![CDATA[If a disposable object is not explicitly disposed before all references to it are out of scope, the object will be disposed at some indeterminate time when the garbage collector runs the finalizer of the object. Because an exceptional event might occur that will prevent the finalizer of the object from running, the object should be explicitly disposed instead.<br/>
+<a href="@ms182289(VS.100).aspx">MSDN help page of rule CA2000</a>
+]]></description>
+  </rule>
+  <rule key="Do not dispose objects multiple times">
+    <name>Do not dispose objects multiple times</name>
+    <configKey><![CDATA[Do not dispose objects multiple times@$(FxCopDir)\Rules\Microsoft.dll]]></configKey>
+    <category name="Microsoft.Usage" />
+    <description><![CDATA[A correctly implemented Dispose method can be called multiple times without throwing an exception. However, this is not guaranteed and to avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.<br/>
+<a href="@ms182334(VS.100).aspx">MSDN help page of rule CA2202</a>
+]]></description>
+  </rule>
+  <rule key="Do not pass literals as localized parameters">
+    <name>Do not pass literals as localized parameters</name>
+    <configKey><![CDATA[Do not pass literals as localized parameters@$(FxCopDir)\Rules\Microsoft.dll]]></configKey>
+    <category name="Microsoft.Globalization" />
+    <description><![CDATA[Literal strings that are embedded in source code are difficult to localize. Avoid passing literal strings as arguments in circumstances where a localized string is generally expected.<br/>
+<a href="@ms182187(VS.100).aspx">MSDN help page of rule CA1303</a>
+]]></description>
+  </rule>
+  <rule key="Literals should be spelled correctly">
+    <name>Literals should be spelled correctly</name>
+    <configKey><![CDATA[Literals should be spelled correctly@$(FxCopDir)\Rules\Microsoft.dll]]></configKey>
+    <category name="Microsoft.Naming" />
+    <description><![CDATA[This rule parses the literal string into words, tokenizing compound words, and checks the spelling of each word/token.<br/>
+<a href="@bb264488(VS.100).aspx">MSDN help page of rule CA2204</a>
+]]></description>
+  </rule>
+  <rule key="Review SQL queries for security vulnerabilities">
+    <name>Review SQL queries for security vulnerabilities</name>
+    <configKey><![CDATA[Review SQL queries for security vulnerabilities@$(FxCopDir)\Rules\Microsoft.dll]]></configKey>
+    <category name="Microsoft.Security" />
+    <description><![CDATA[A SQL command string built from user input is vulnerable to SQL injection attacks. Microsoft SQL Server and other database servers support stored procedures and parameterized SQL queries, which reduce the risk of injection attacks.<br/>
+<a href="@ms182310(VS.100).aspx">MSDN help page of rule CA2100</a>
+]]></description>
+  </rule>
+  <rule key="Provide correct arguments to formatting methods">
+    <name>Provide correct arguments to formatting methods</name>
+    <configKey><![CDATA[Provide correct arguments to formatting methods@$(FxCopDir)\Rules\Microsoft.dll]]></configKey>
+    <category name="Microsoft.Usage" />
+    <description><![CDATA[Provide the correct number of arguments to String.Format calls.<br/>
+<a href="@ms182361(VS.100).aspx">MSDN help page of rule CA2241</a>
+]]></description>
+  </rule>
+  <rule key="Validate arguments of public methods">
+    <name>Validate arguments of public methods</name>
+    <configKey><![CDATA[Validate arguments of public methods@$(FxCopDir)\Rules\Microsoft.dll]]></configKey>
+    <category name="Microsoft.Design" />
+    <description><![CDATA[All reference arguments passed to externally visible methods should be checked against null (Nothing in VB). If appropriate, throw a System.ArgumentNullException when the argument is null.<br/>
+<a href="@ms182182(VS.100).aspx">MSDN help page of rule CA1062</a>
+]]></description>
+  </rule>
+  <rule key="AvoidExcessiveClassCoupling">
+    <name>Avoid excessive class coupling</name>
+    <configKey><![CDATA[AvoidExcessiveClassCoupling@$(FxCopDir)\Rules\MaintainabilityRules.dll]]></configKey>
+    <category name="Microsoft.Maintainability" />
+    <description><![CDATA[Types and methods with a high degree of class coupling can be difficult to maintain.<br/>
+<a href="http://msdn.microsoft.com/library/bb397994(VS.100).aspx">MSDN help page of rule CA1506</a>
+]]></description>
+  </rule>
+  <rule key="AvoidExcessiveComplexity">
+    <name>Avoid excessive complexity</name>
+    <configKey><![CDATA[AvoidExcessiveComplexity@$(FxCopDir)\Rules\MaintainabilityRules.dll]]></configKey>
+    <category name="Microsoft.Maintainability" />
+    <description><![CDATA[Method implementations that are exceedingly complex increase the challenge of understanding and maintaining code.<br/>
+<a href="http://msdn.microsoft.com/library/ms182212(VS.100).aspx">MSDN help page of rule CA1502</a>
+]]></description>
+  </rule>
+  <rule key="AvoidExcessiveInheritance">
+    <name>Avoid excessive inheritance</name>
+    <configKey><![CDATA[AvoidExcessiveInheritance@$(FxCopDir)\Rules\MaintainabilityRules.dll]]></configKey>
+    <category name="Microsoft.Maintainability" />
+    <description><![CDATA[Object hierarchies that are deeply nested increase the challenge of understanding and maintaining code.<br/>
+<a href="http://msdn.microsoft.com/library/ms182213(VS.100).aspx">MSDN help page of rule CA1501</a>
+]]></description>
+  </rule>
+  <rule key="AvoidUnmaintainableCode">
+    <name>Avoid unmaintainable code</name>
+    <configKey><![CDATA[AvoidUnmaintainableCode@$(FxCopDir)\Rules\MaintainabilityRules.dll]]></configKey>
+    <category name="Microsoft.Maintainability" />
+    <description><![CDATA[Types and methods with a high degree of class coupling, cyclomatic complexity and/or program length can be difficult to maintain.<br/>
+<a href="http://msdn.microsoft.com/library/bb386043(VS.100).aspx">MSDN help page of rule CA1505</a>
+]]></description>
+  </rule>
+  <rule key="ReviewMisleadingFieldNames">
+    <name>Review misleading field names</name>
+    <configKey><![CDATA[ReviewMisleadingFieldNames@$(FxCopDir)\Rules\MaintainabilityRules.dll]]></configKey>
+    <category name="Microsoft.Maintainability" />
+    <description><![CDATA[Review field names which, by convention, appear to indicate they are instance or static but, in fact, are not. This rule fires against instance fields which have names prefixed with "s_" and static fields which are prefixed with "m_".<br/>
+<a href="http://msdn.microsoft.com/library/bb164506(VS.100).aspx">MSDN help page of rule CA1504</a>
+]]></description>
+  </rule>
+  <rule key="VariableNamesShouldNotMatchFieldNames">
+    <name>Variable names should not match field names</name>
+    <configKey><![CDATA[VariableNamesShouldNotMatchFieldNames@$(FxCopDir)\Rules\MaintainabilityRules.dll]]></configKey>
+    <category name="Microsoft.Maintainability" />
+    <description><![CDATA[Instance field and variable names should not be identical within the same scope.<br/>
+<a href="http://msdn.microsoft.com/library/ms182216(VS.100).aspx">MSDN help page of rule CA1500</a>
+]]></description>
+  </rule>
+  <rule key="AvoidCallingProblematicMethods">
+    <name>Avoid calling problematic methods</name>
+    <configKey><![CDATA[AvoidCallingProblematicMethods@$(FxCopDir)\Rules\ReliabilityRules.dll]]></configKey>
+    <category name="Microsoft.Reliability" />
+    <description><![CDATA[Avoid making unnecessary and potentially dangerous method calls.<br/>
+<a href="http://msdn.microsoft.com/library/bb385973(VS.100).aspx">MSDN help page of rule CA2001</a>
+]]></description>
+  </rule>
+  <rule key="DoNotLockOnObjectsWithWeakIdentity">
+    <name>Do not lock on objects with weak identity</name>
+    <configKey><![CDATA[DoNotLockOnObjectsWithWeakIdentity@$(FxCopDir)\Rules\ReliabilityRules.dll]]></configKey>
+    <category name="Microsoft.Reliability" />
+    <description><![CDATA[Don't take locks on objects that may bleed across AppDomains or that don't have a strong identity.<br/>
+<a href="http://msdn.microsoft.com/library/ms182290(VS.100).aspx">MSDN help page of rule CA2002</a>
+]]></description>
+  </rule>
+  <rule key="DoNotTreatFibersAsThreads">
+    <name>Do not treat fibers as threads</name>
+    <configKey><![CDATA[DoNotTreatFibersAsThreads@$(FxCopDir)\Rules\ReliabilityRules.dll]]></configKey>
+    <category name="Microsoft.Reliability" />
+    <description><![CDATA[Do not assume a managed thread is a Win32 thread - it could be a fiber. The runtime will run managed threads as fibers on top of real threads owned by SQL Server. These threads will be shared across AppDomains and even databases in the SQL Server process. Using managed thread local storage will work, but you may not use unmanaged thread local storage or assume your code will run on the current OS thread again. Do not change settings like the thread's locale. Do not call CreateCriticalSection or CreateMutex via P/Invoke because they require the thread that enters a lock also exit the lock. Since this will not be the case when using fibers, Win32 critical sections and mutexes will be useless in SQL Server.
+You may safely use most of the state on a managed System.Thread object, including managed thread local storage and the thread's current UI culture. For programming model reasons, you will not be able to change a thread's current culture when running in SQL Server though (this will be enforced through a new permission).<br/>
+<a href="http://msdn.microsoft.com/library/ms182291(VS.100).aspx">MSDN help page of rule CA2003</a>
+]]></description>
+  </rule>
+  <rule key="RemoveCallsToGCKeepAlive">
+    <name>Remove calls to GC.KeepAlive</name>
+    <configKey><![CDATA[RemoveCallsToGCKeepAlive@$(FxCopDir)\Rules\ReliabilityRules.dll]]></configKey>
+    <category name="Microsoft.Reliability" />
+    <description><![CDATA[If converting to SafeHandle usage, remove all calls to GC.KeepAlive(object). Classes relying on SafeHandle do not require calls to GC.KeepAlive, and unnecessary calls can make code harder to maintain.<br/>
+<a href="http://msdn.microsoft.com/library/ms182293(VS.100).aspx">MSDN help page of rule CA2004</a>
+]]></description>
+  </rule>
+  <rule key="UseSafeHandleToEncapsulateNativeResources">
+    <name>Use SafeHandle to encapsulate native resources</name>
+    <configKey><![CDATA[UseSafeHandleToEncapsulateNativeResources@$(FxCopDir)\Rules\ReliabilityRules.dll]]></configKey>
+    <category name="Microsoft.Reliability" />
+    <description><![CDATA[Use of IntPtr in managed code may indicate a potential security and reliability problem. All uses of IntPtr must be reviewed to determine whether use of a SafeHandle (or similar technology) is required in its place. Problems will occur if the IntPtr represents some native resource (memory, file handle, socket etc.) that managed code is considered to own. I.e. managed code is expected to in some way release the resource and failure to do so would cause resource leakage. In such scenarios security or reliability problems will also exist if multithreaded access is allowed to the IntPtr and a means of releasing the resource represented by the IntPtr. These problems involve recycling of the IntPtr value on resource release while simultaneous use of the resource is being made on another thread, leading to race conditions where one thread can read or write data associated with the wrong resource. For example, if your type stores an OS handle as an IntPtr and allows users to call both Close and any other method using that handle simultaneously (without some kind of synchronization), your code has a handle recycling problem, which causes data corruption and often a security vulnerability. SafeHandle (and its sibling class CriticalHandle) provide a mechanism for encapsulating a native handle to a resource so that such threading problems can be avoided (along with other issues such as the need to carefully control the lifetime of managed objects that contain a copy of the native handle over calls to native methods; ie, you can often remove calls to GC.KeepAlive). There are performance overheads implicit in using SafeHandle (and, to a lesser degree, CriticalHandle) which can often be mitigated through careful design.<br/>
+<a href="http://msdn.microsoft.com/library/ms182294(VS.100).aspx">MSDN help page of rule CA2006</a>
+]]></description>
+  </rule>
+</rules>
